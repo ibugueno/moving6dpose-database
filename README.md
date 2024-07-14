@@ -2,7 +2,7 @@
 
 This is the repository that contains source code for [RoboCatch: A Database for Real-Time Pose Estimation of Moving Objects Using Event Cameras website]().
 
-If you find this database useful for your work please cite:
+If you find this database useful for your work, please cite:
 ```
 @misc{bugueno2024robocatch,
   title={RoboCatch: A Database for Real-Time Pose Estimation of Moving Objects Using Event Cameras}, 

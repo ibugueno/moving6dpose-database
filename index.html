@@ -81,7 +81,7 @@
           <div class="is-size-5 publication-authors">
 
             <span class="author-block">
-              <a href="hhttps://ibugueno.github.io/">Ignacio Bugueno-Cordova</a><sup>1</sup>,</span>
+              <a href="https://ibugueno.github.io/">Ignacio Bugueno-Cordova</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://scholar.google.com/citations?user=U0XHBs8AAAAJ">Javier Ruiz-del-Solar</a><sup>1,2</sup>,</span>
             <span class="author-block">
@@ -133,7 +133,7 @@
               -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ibugueno/robocatch-database"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -142,16 +142,15 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <!--
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://drive.google.com/drive/folders/1DLNloOo64GW-gw_8Uq7_TjRl4BSJqxXq?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Data samples</span>
                   </a>
-              </span>-->
+              </span>
             </div>
 
           </div>
@@ -169,7 +168,7 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Moving6DPoSe-S: Trajectories of moving objects simulated using Blender rendering software and the V2E event camera simulator.
+        <span class="dnerf">Figure 1 - Moving6DPoSe-S: Trajectories of moving objects simulated using Blender rendering software and the V2E event camera simulator.
       </h2>
     </div>
   </div>
@@ -243,21 +242,19 @@
         
         <div class="content has-text-justified">
           <p>
-          This paper introduces Moving6DPoSe, a new multi-camera database for real-time estimation of the 6D pose of moving objects. The database consists of annotated datasets of real and synthetic data captured in multiple scenarios. Specifically, we employ Stereo, RGB and event-based cameras, the latter distinguished by their high temporal resolution, absence of blur motion, and high dynamic range, ideal for capturing fast object trajectories. 
+          We introduce Moving6DPoSe, a novel multi-camera database designed for 6D pose estimation and segmentation of moving objects. 
           </p>
 
           <p>
-          The proposed methodological framework addresses the selection of twenty varied objects, scanning and photogrammetry to generate three-dimensional models, and capturing of a multi-camera database in multiple scenarios, including camera calibration and data labeling for several computer vision tasks. 
+          This database employs frame and event-based cameras and exploits the capabilities of these neuromorphic sensors by capturing scene changes with high temporal resolution and zero motion blur, even in high dynamic range outdoor environments. 
           </p>
 
           <p>
-          The Moving6DPoSe-R set consists of objects with various trajectories, including controlled and uncontrolled throws under uniform and cluttered backgrounds.
-          Also, we developed Moving6DPoSe-S, a synthetic database that simulates trajectories for the aforementioned objects and vision sensors with rendering different configurations.
-          Finally, we discuss the qualitative/quantitative results obtained.
+          The Moving6DPoSe database includes 20 objects with their 3D models and motion data in real and synthetic setups. It consists of two datasets: Moving6DPoSe-R, which captures real-world object motion, and Moving6DPoSe-S, which simulates object motion,  using different motion trajectories in each case. 
           </p>
 
           <p>
-          This extensive contribution is made available to the community and can be used to design, train, and evaluate new real-time computer vision methods for tasks such as segmentation, classification, detection, and 6D pose estimation of moving objects using frame-based and event-based cameras.
+          This paper describes the selected vision sensors, the motion scenarios, the data acquisition processes, and the ground truth annotations for segmentation, detection, and 6D pose estimation of the database. Moving6DPoSe will be made available for research purposes.
           </p>
         </div>
         
@@ -284,40 +281,482 @@
 
 <section class="section">
   <div class="container is-max-widescreen">
-
     <div class="rows">
 
+      <!-- Animation. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Database description</h2>
 
-    <!-- Animation. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Database description</h2>
+          <div class="content has-text-justified">
+            <p>
+            The Moving6DPoSe DB is designed for segmentation, detection, and 6D pose estimation of moving objects. It consists of two subsets: Moving6DPoSe-R and Moving6DPoSe-S, with samples captured in the real-world and samples generated in simulations respectively. For both subsets the same objects are used, representing various shapes, sizes and textures. 
+            </p>
+
+            <p>
+            Figure 2 summarizes the stages for building the database. The first stage is the 3D scanning of the objects to be used in both datasets. The second stage is the canonicalization of the models, i.e., the alignment, centering and correction of the spatial dimensions. The third stage is the capture of the Moving6DPoSe-R dataset, and the generation of the Moving6DPoSe-S dataset using simulations. The last stage is the annotation of frames and events for object segmentation, detection and 6D pose estimation. 
+            </p>
+          </div>
 
 
-        </br>
-        </br>
-        <img src="static/images/robocatch_table_sensors.png" class="" alt="" />
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Summary table of relevant technical characteristics of vision sensors employed.
-        </h2>
-       
-        </br>
-        </br>
-        <img src="static/images/robocatch_emulate_v2e.png" class="" alt="" />
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Referential schematic in the synthetic generation of events from scanned models. The V2E method generates events from conventional frame-based video and simulates the behavior of a neuromorphic sensor.
-        </h2>
+          <img src="static/images/moving6dpose_annotation.png" class="" alt="" />
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf">Figure 2 - Moving6DPoSe database collection and annotation. (a) Object scanning; (b) Object canonicalization, involving the alignment of each object category to the canonical space; (c) Moving6DPoSe-R dataset experimental capture and Moving6DPoSe-S dataset synthetic generation; and (d) Frame and event-based data annotation, using different tools for segmentation labeling, detection and 6D pose of moving objects.
+          </h2>
 
-        </br>
-        </br>
-        <img src="static/images/robocatch_scenarios.png" class="" alt="" />
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">Experimental scenarios: (a) Scenario 1: Object attached to a rope is thrown on a pendulum to describe a controlled parabolic motion; (b) Scenario 2: An object is released in free fall (c) Scenario 3: Air-damped object launch, with capture platform perpendicular to the object trajectory.
-        </h2>
+          <div class="content has-text-justified">
+            <p>
+            Twenty different objects are selected to build the dataset, providing varying shapes and textures for depth estimation and spatio-temporal analysis. The object models are shown in Figure 3.
+            </p>
 
+            <p>
+            This work employs PolyCam (LiDAR & 3D Scanner for iPhone & Android), a mobile application that --through the rotational capture of multiple frames for each object (at least 100 frames)-- allows to generate the mesh and the associated point cloud. The mesh and depth models are shown in Figure 4.
+            </p>
+          </div>
+
+
+          <!-- Flex container for side-by-side images -->
+          <div style="display: flex; justify-content: space-around; align-items: flex-start; margin-top: 20px; gap: 20px;">
+            <!-- First figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_scanned_objects_1.png" style="width: 100%; height: auto;" alt="Moving6DPoSe-R" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 3 - Three-dimensional texture models rendered after scanning the objects.</span>
+              </h2>
+            </div>
+            <!-- Second figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_scanned_objects_2.png" style="width: 100%; height: auto;" alt="Moving6DPoSe-S" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 4 - Three-dimensional mesh and depth models rendered after scanning the objects.</span>
+              </h2>
+            </div>
+          </div>
+
+          </br>
+          </br> 
+
+          <div class="content has-text-justified">
+            <p>
+            A custom-made platform is designed (see Figure 5 and 6) to mount each camera considering the spatial dimension of each device and the respective field-of-view (see Table 1).
+            </p>
+          </div>
+
+
+          <!-- Flex container for side-by-side images -->
+          <div style="display: flex; justify-content: space-around; align-items: flex-start; margin-top: 20px; gap: 20px;">
+            <!-- First figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_plataform_diagram.png" style="width: 100%; height: auto;" alt="Moving6DPoSe-R" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 5 - Platform designed for mounting the vision sensors.</span>
+              </h2>
+            </div>
+            <!-- Second figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_plataform_pic.jpg" style="width: 100%; height: auto;" alt="Moving6DPoSe-S" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 6 - Platform deploy for mounting the vision sensors.</span>
+              </h2>
+            </div>
+          </div>
+
+          </br>
+
+
+          <!-- Main Table -->
+          <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 100%; border-collapse: collapse;">
+              <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+                  Table 1 - Summary table of relevant technical characteristics of vision sensors employed.
+              </caption>
+              <tr>
+                  <th>Sensor</th>
+                  <th>Lens</th>
+                  <th>Data</th>
+                  <th>Dimension</th>
+                  <th>Field-of-view</th>
+                  <th>Resolution</th>
+                  <th>Rate<sub>Generation</sub></th>
+                  <th>Rate<sub>Storage</sub></th>
+              </tr>
+              <tr>
+                  <td>ASUS ROG Eye S</td>
+                  <td>Monocular</td>
+                  <td>RGB Frame</td>
+                  <td>2.87cm high<br>8.1cm wide<br>1.65cm deep</td>
+                  <td>78.0°</td>
+                  <td>640x480</td>
+                  <td>Fixed (30Hz)</td>
+                  <td>Fixed (30Hz)</td>
+              </tr>
+              <tr>
+                  <td>ZED-2</td>
+                  <td>Stereo</td>
+                  <td>RGB frame per lens<br>Stereo RGB frame</td>
+                  <td>3.0cm high<br>17.5cm wide<br>3.3cm deep</td>
+                  <td>H: 92-103°<br>V: 61-71°</td>
+                  <td>640x480<br>1280x480</td>
+                  <td>Fixed (15Hz)</td>
+                  <td>Fixed (15Hz)</td>
+              </tr>
+              <tr>
+                  <td>DAVIS346</td>
+                  <td>Monocular</td>
+                  <td>Gray frame<br>Events</td>
+                  <td>4cm high<br>6.0cm wide<br>2.5cm deep</td>
+                  <td>H: 29.9-113°<br>V: 22.7-99.7°<br>D: 36.9-215°</td>
+                  <td>346x260</td>
+                  <td>Fixed (30Hz)<br>Variable (1MHz)</td>
+                  <td>Fixed (30Hz)</td>
+              </tr>
+              <tr>
+                  <td>Prophesee EVK4</td>
+                  <td>Monocular</td>
+                  <td>Events</td>
+                  <td>3.0cm high<br>3.0cm wide<br>3.6cm deep</td>
+                  <td>H: 41.4°<br>V: 23.6°<br>D: 47.0°</td>
+                  <td>1280x720</td>
+                  <td>Variable (10KHz)</td>
+                  <td>Variable (10KHz)</td>
+              </tr>
+          </table>
+
+
+          </br> 
+
+          <div class="content has-text-justified">
+            <p>
+            To calibrate each vision sensor's parameters, including frame-based (ROG Eye S and ZED2) and event-based cameras (DAVIS346 and Prophesee EVK4), we used checkerboard calibration process  to calculate the camera matrix, distortion coefficients, and rectification/projection matrix. For frame-based cameras, the OpenCV calibration pipeline was used to obtain the camera parameters. 
+            </p>
+
+            <p>
+            For the DAVIS346 event-based camera we used the OpenCV pipeline (this sensor generates events and frames). In the case of the EVK4 HD, the manufacturer Prophesee requires the calibration chessboard to be in motion to generate an accumulated image of the events and then calibrate the camera using an adapted version of  the 8x6 checkerboard calibration process. The bias configuration parameters adopted for the DAVIS346 and EVK4 event cameras are also reported in Table 2 and 3. The calibration parameters are reported on Table 4. 
+
+            </p>
+          </div>
+
+
+          <!-- Side-by-side tables -->
+          <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+              <!-- DAVIS346 Table -->
+              <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 45%; border-collapse: collapse; margin-right: 10px;">
+                  <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+                      Table 2 - Bias configuration parameters for the DAVIS346
+                  </caption>
+                  <tr>
+                      <th>Parameter</th>
+                      <th>Value</th>
+                  </tr>
+                  <tr>
+                      <td>Cascade bias</td>
+                      <td>54</td>
+                  </tr>
+                  <tr>
+                      <td>Injection ground bias</td>
+                      <td>1108364</td>
+                  </tr>
+                  <tr>
+                      <td>Request photodiode bias</td>
+                      <td>16777215</td>
+                  </tr>
+                  <tr>
+                      <td>Pull-up X bias</td>
+                      <td>8159221</td>
+                  </tr>
+                  <tr>
+                      <td>Pull-up Y bias</td>
+                      <td>16777215</td>
+                  </tr>
+                  <tr>
+                      <td>Differential bias</td>
+                      <td>30153</td>
+                  </tr>
+              </table>
+              <!-- EVK4 Table -->
+              <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 45%; border-collapse: collapse;">
+                  <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+                      Table - 3 Bias configuration parameters for the EVK4
+                  </caption>
+                  <tr>
+                      <th>Parameter</th>
+                      <th>Value</th>
+                  </tr>
+                  <tr>
+                      <td>Refresh bias</td>
+                      <td>1500</td>
+                  </tr>
+                  <tr>
+                      <td>High-pass filter bias</td>
+                      <td>1800</td>
+                  </tr>
+                  <tr>
+                      <td>Focus bias</td>
+                      <td>1720</td>
+                  </tr>
+                  <tr>
+                      <td>Differential bias</td>
+                      <td>300</td>
+                  </tr>
+                  <tr>
+                      <td>Differential bias when active</td>
+                      <td>411</td>
+                  </tr>
+                  <tr>
+                      <td>Differential bias when inactive</td>
+                      <td>213</td>
+                  </tr>
+              </table>
+          </div>
+
+          <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 70%; border-collapse: collapse; margin: 20px auto; text-align: center;">
+              <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px;">
+                  Table 4 - Intrinsic parameters of frame-based and event-based vision sensor calibration, using the standard/adapted checkerboard calibration process [Zhang 2000].
+              </caption>
+              <tr style="background-color: #f9f9f9;">
+                  <th style="padding: 10px;">Sensor</th>
+                  <th style="padding: 10px;">Camera Intrinsic Matrix</th>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">ROG Eye S</td>
+                  <td style="padding: 10px;">
+                      <div style="display: inline-block; text-align: left; font-family: 'Courier New', Courier, monospace;">
+                          [350.30  &nbsp; 0       &nbsp; 360.76]<br>
+                          [  0      &nbsp; 353.83 &nbsp; 206.52]<br>
+                          [  0      &nbsp; 0      &nbsp; 1     ]
+                      </div>
+                  </td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 10px;">ZED-2</td>
+                  <td style="padding: 10px;">
+                      <div style="display: inline-block; text-align: left; font-family: 'Courier New', Courier, monospace;">
+                          [306.49  &nbsp; 0       &nbsp; 274.94]<br>
+                          [  0      &nbsp; 306.49 &nbsp; 155.09]<br>
+                          [  0      &nbsp; 0      &nbsp; 1     ]
+                      </div>
+                  </td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">DAVIS346</td>
+                  <td style="padding: 10px;">
+                      <div style="display: inline-block; text-align: left; font-family: 'Courier New', Courier, monospace;">
+                          [354.66  &nbsp; 0       &nbsp; 164.87]<br>
+                          [  0      &nbsp; 355.83 &nbsp; 115.95]<br>
+                          [  0      &nbsp; 0      &nbsp; 1     ]
+                      </div>
+                  </td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 10px;">EVK4 HD</td>
+                  <td style="padding: 10px;">
+                      <div style="display: inline-block; text-align: left; font-family: 'Courier New', Courier, monospace;">
+                          [1711.01 &nbsp; 0       &nbsp; 647.99]<br>
+                          [   0     &nbsp; 204.42 &nbsp; 351.53]<br>
+                          [   0     &nbsp; 0      &nbsp; 1     ]
+                      </div>
+                  </td>
+              </tr>
+          </table>
+
+
+          <div class="content has-text-justified">
+            <p>
+            Five scenarios were designed to capture different object trajectories, as illustrated in Figure 7.
+            </p>
+
+          </div>
+
+          <img src="static/images/moving6dpose_scenarios.png" class="" alt="" />
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf">Figure 7 - Experimental scenarios: (a) Scenario 1: an object rotating on its axis with the platform moving around the object; (b) Scenario 2: An object attached to a rope is thrown on a pendulum with a controlled parabolic motion; (c) Scenario 3: An object is released in free fall; (d) Scenario 4: An object is thrown; (e) Scenario 5: An object is thrown to the platform. 
+          </h2>
+
+          <div class="content has-text-justified">
+            <p>
+            For frame-based simulation we used Blender. Given that event-based cameras are not included among the vision sensors available in this software, the V2E simulator is used to generate the events from the high frame rate image sequences, as shown in Figure 8.
+            </p>
+          </div>
+
+          <img src="static/images/moving6dpose_emulate_v2e.png" class="" alt="" />
+          <h2 class="subtitle has-text-centered">
+            <span class="dnerf">Figure 8 - Referential schematic in the synthetic generation of events from scanned models. The V2E method generates events from conventional frame-based video and simulates the behavior of a neuromorphic sensor.
+          </h2>
+
+          <div class="content has-text-justified">
+            <p>
+            Parameters in Table 5 summarize the V2E configuration in the simulation of the DAVIS346 and Prophesee EVK4 sensors. As a result, we generate the frames and events associated with the simulation of the moving objects rendered in Blender and with V2E.
+            </p>
+          </div>
+
+          <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 70%; border-collapse: collapse; margin: 20px auto; text-align: left;">
+              <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px; text-align: center;">
+                  Table 5 - V2E configuration parameters adopted for event-based Moving6DPoSe-S dataset generation.
+              </caption>
+              <tr style="background-color: #f9f9f9;">
+                  <th style="padding: 10px;">Parameter</th>
+                  <th style="padding: 10px;">Value</th>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">Time resolution of DVS events</td>
+                  <td style="padding: 10px;"><1 ms</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 10px;">Duration of exposure to DVS events</td>
+                  <td style="padding: 10px;">5 ms</td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">Positive event threshold</td>
+                  <td style="padding: 10px;">0.15</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 10px;">Negative event threshold</td>
+                  <td style="padding: 10px;">0.15</td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">Sigma threshold variation</td>
+                  <td style="padding: 10px;">0.03</td>
+              </tr>
+              <tr style="background-color: #f9f9f9;">
+                  <td style="padding: 10px;">Simulated event camera</td>
+                  <td style="padding: 10px;">DAVIS 346, EVK4</td>
+              </tr>
+              <tr>
+                  <td style="padding: 10px;">Spatial dimension (height, width)</td>
+                  <td style="padding: 10px;">346x260, 1280x720</td>
+              </tr>
+          </table>
+      </div>
     </div>
   </div>
 </section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <!-- Animation. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Database summary</h2>
+
+
+          <div class="content has-text-justified">
+            <p>
+            The distribution of the real and synthetic Moving6DPoSe partitions is shown in Figure 9 and 10. The real partition (Figure 9) includes scenarios such as “Rotation”, “Pendulum”, “Free Fall”, “Eye-to-Hand Throw” and “Eye-to-Hand Throw”, captured with the 4 vision sensors contributing. The synthetic partitioning (Figure 10) further extends these scenarios, leveraging Blender to generate over 20,000,000 samples.
+
+            </p>
+          </div>
+
+
+          <!-- Flex container for side-by-side images -->
+          <div style="display: flex; justify-content: space-around; align-items: flex-start; margin-top: 20px; gap: 20px;">
+            <!-- First figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_ddbb-r.png" style="width: 100%; height: auto;" alt="Moving6DPoSe-R" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 9 - Moving6DPoSe-R quantitative distribution.</span>
+              </h2>
+            </div>
+            <!-- Second figure -->
+            <div style="text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 45%;">
+              <img src="static/images/moving6dpose_ddbb-s.png" style="width: 100%; height: auto;" alt="Moving6DPoSe-S" />
+              <h2 class="subtitle">
+                <span class="dnerf">Figure 10 - Moving6DPoSe-S quantitative distribution.</span>
+              </h2>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <!-- Animation. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Hardware specification</h2>
+
+            <div class="content has-text-justified">
+              <p>
+              The simulation of the synthetic dataset, the labeling of the samples and the training / validation of Moving6DPoSe involves high computational resource requirements and long run times. In this context, this work uses 4 Apple® M2 Pro servers and the NVIDIA® DGX-1™ Cluster, with the specifications in Tables 6 and 7.
+              </p>
+            </div>
+
+            <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 70%; border-collapse: collapse; margin: 20px auto; text-align: center;">
+                <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px; text-align: center;">
+                    Table 6 - Mac Mini specifications. Hardware used in the simulated generation of the database. 
+                </caption>
+                <tr style="background-color: #f9f9f9;">
+                    <th style="padding: 10px;">Parameter</th>
+                    <th style="padding: 10px;">Value</th>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px;">Chip</td>
+                    <td style="padding: 10px;">Apple M2 Pro</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Total Number of CPU Cores</td>
+                    <td style="padding: 10px;">10 (6 performance, 4 efficiency)</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px;">Memory</td>
+                    <td style="padding: 10px;">16 GB</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">GPU Core Count</td>
+                    <td style="padding: 10px;">16</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px;">Metal Support</td>
+                    <td style="padding: 10px;">Metal 3</td>
+                </tr>
+            </table>
+
+
+            <table border="1" style="font-family: 'Times New Roman', Times, serif; font-size: 14px; color: #000000; width: 70%; border-collapse: collapse; margin: 20px auto; text-align: center;">
+
+                <caption style="font-weight: bold; font-size: 16px; margin-bottom: 10px; text-align: center;">
+                    Table 7 - DGX-1 Cluster specifications. Hardware used in the labelling/evaluation of the database.
+                </caption>
+                <tr style="background-color: #f9f9f9;">
+                    <th style="padding: 10px;">Hardware</th>
+                    <th style="padding: 10px;">Accelerator</th>
+                    <th style="padding: 10px;">Architecture</th>
+                    <th style="padding: 10px;">Boost clk</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">NVIDIA DGX-1</td>
+                    <td style="padding: 10px;">V100</td>
+                    <td style="padding: 10px;">Volta</td>
+                    <td style="padding: 10px;">1530 MHz</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td style="padding: 10px;">Memory Clock</td>
+                    <td style="padding: 10px;">Bandwidth</td>
+                    <td style="padding: 10px;">VRAM</td>
+                    <td style="padding: 10px;">GPU</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">1.75 Gbit/s</td>
+                    <td style="padding: 10px;">900 GB/sec</td>
+                    <td style="padding: 10px;">32 GB</td>
+                    <td style="padding: 10px;">GV100</td>
+                </tr>
+            </table>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
 
 
